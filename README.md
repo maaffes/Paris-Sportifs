@@ -10,8 +10,8 @@ git clone https://github.com/maaffes/Paris-Sportifs.git
 
 ## Démarrage
 
-npm install
-ng serve
+**npm install
+**ng serve
 
 ## Fabriqué avec
 
