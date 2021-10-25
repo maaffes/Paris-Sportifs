@@ -1,0 +1,9 @@
+<div class="row" *ngIf="errorTeams; else errorUpload">
+    <div class="col-md-2" *ngFor="let logo of listOfteams">
+        <a [routerLink]="['/team']" [queryParams]="{idTeam: logo.idTeam}">
+            <img [src]="logo.strTeamBadge" class="logo "></a>
+    </div>
+</div>
+<ng-template #errorUpload>
+    <div class="error-message"> Teams not available</div>
+</ng-template>

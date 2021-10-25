@@ -1,0 +1,19 @@
+<nav class="navbar navbar-light bg-light nav">
+  <div class="col-5"> <a [routerLink]="['/Home']"><i
+        class="fa fa-angle-left icon-direction-custom date_picker-custom"></i>Back</a></div>
+  <div class="col"> {{team?.strTeam}} </div>
+</nav>
+<div class="detail-content">
+  <div *ngIf="team?.strTeamBanner; else errorUpload">
+    <img class="full-width" [src]="team?.strTeamBanner">
+  </div>
+  <ng-template #errorUpload>
+    <div class="error-message"> Banner not available</div>
+  </ng-template>
+
+  <div>
+  </div>
+  <span>{{team?.strCountry}} </span><br>
+  <b class="term">{{team?.strLeague}} </b><br>
+  <div class="full-width">{{team?.strDescriptionEN}} </div>
+</div>

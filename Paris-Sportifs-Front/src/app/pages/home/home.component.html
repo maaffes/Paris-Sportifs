@@ -1,0 +1,11 @@
+<nav class="navbar navbar-light bg-light">
+  <ng-template #rt let-r="result" let-t="term">
+    <ngb-highlight [result]="r.strLeague" [term]="searchLeague"></ngb-highlight>
+  </ng-template>
+
+  <div class=" search-form form-group">
+    <input id="typeahead-http" type="text" class="form-control search-input" placeholder="&#xF002; Search"
+      [(ngModel)]="searchLeague" [ngbTypeahead]="search" [resultTemplate]="rt" [inputFormatter]="formatter" />
+  </div>
+</nav>
+<app-teams [league]="searchLeague"></app-teams>
