@@ -1,6 +1,6 @@
 # Paris sportifs
 
-Développement d'une application sur le football, à partir d'une API en accès libre.
+Développement d'une application sur le football, à partir d'API https://www.thesportsdb.com/.
 
 
 ### Installation
