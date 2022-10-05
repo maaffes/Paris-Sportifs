@@ -10,8 +10,8 @@ export class TeamsComponent implements OnInit {
   listOfteams=[];
   errorTeams:boolean=true;
   @Input() set league(data) {
-    if(data && data.idLeague ){
-      this.theSportsDbService.getAllTeams(data.idLeague).subscribe(
+    if(data && data.strLeague ){
+      this.theSportsDbService.getAllTeams(data.strLeague ).subscribe(
         data=>{
           if(data.teams){
           this.listOfteams=data.teams;

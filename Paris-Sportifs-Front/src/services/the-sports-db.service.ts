@@ -17,7 +17,7 @@ export class TheSportsDbService {
  * @returns 
  */
   getAllTeams(idLeague: any): Observable<any> {
-    return this.http.get(`https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${idLeague}`);
+    return this.http.get(`https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${idLeague}`);
   }
 
 /**
@@ -26,7 +26,7 @@ export class TheSportsDbService {
  * @returns 
  */
   getDetailTeam(idTeam: any): Observable<any> {
-    return this.http.get(`https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${idTeam}`);
+    return this.http.get(`https://www.thesportsdb.com/api/v1/json/2/lookupteam.php?id=${idTeam}`);
   }
 
   /**
@@ -39,7 +39,7 @@ export class TheSportsDbService {
     if (term === '') {
       return of([]);
     }
-    return this.http.get<any>(`https://www.thesportsdb.com/api/v1/json/1/all_leagues.php`)
+    return this.http.get<any>(`https://www.thesportsdb.com/api/v1/json/2/all_leagues.php`)
       .pipe(
         map((response) => {
           formatter = (x: { strLeague: string }) => x.strLeague;
