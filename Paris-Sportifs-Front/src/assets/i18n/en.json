@@ -1,0 +1,13 @@
+{
+    "HOME": {
+      "TITLE": "Hello Angular with ngx-translate!",
+      "SELECT": "Change language",
+      "BACK": "Back",
+      "DECONNECT": "Sign out",
+      "FORGOT": "Forgot password?",
+      "LOGIN": "Login",
+      "PASSWORD": "Password",
+      "CONNECT": "Sign In",
+      "CHOICE": " Choose your league"
+    }
+  }

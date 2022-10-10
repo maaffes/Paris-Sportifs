@@ -1,6 +1,6 @@
 <div class="row" *ngIf="errorTeams; else errorUpload">
     <div class="col-md-2" *ngFor="let logo of listOfteams">
-        <a [routerLink]="['/team']" [queryParams]="{idTeam: logo.idTeam}">
+        <a [routerLink]="['/team']" [queryParams]="{idTeam: logo.idTeam,name: logo.strTeam}">
             <img [src]="logo.strTeamBadge" class="logo "></a>
     </div>
 </div>

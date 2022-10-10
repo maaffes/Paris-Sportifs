@@ -9,6 +9,7 @@ import { TheSportsDbService } from 'src/services/the-sports-db.service';
 })
 export class TeamDetailsComponent implements OnInit {
   team: any;
+  nameTeam: string;
   constructor(
     private route: ActivatedRoute,
     private theSportsDbService: TheSportsDbService
@@ -16,9 +17,11 @@ export class TeamDetailsComponent implements OnInit {
 
   ngOnInit() {
     const idTeam = this.route.snapshot.queryParams.idTeam;
+    this.nameTeam = this.route.snapshot.queryParams.name;
+    debugger
     this.theSportsDbService.getDetailTeam(idTeam).subscribe(
       (data) => {
-        this.team = data.teams[0];
+        this.team = data.equipment[0];
       }
     )
   }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { TheSportsDbService } from 'src/services/the-sports-db.service';
@@ -11,11 +12,17 @@ import { TheSportsDbService } from 'src/services/the-sports-db.service';
 
 
 export class HomeComponent {
+  isValid:boolean;
+  hideLogin:boolean=false;
   @Output() searchLeague = new EventEmitter<string>();
+  user=sessionStorage.getItem('Login');
+  constructor(public translate: TranslateService,  private theSportsDbService: TheSportsDbService
+    ){
+    translate.addLangs(['en', 'fr']);
+    translate.setDefaultLang('en');
 
-  constructor(
-    private theSportsDbService: TheSportsDbService
-  ) {
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
   }
 
   search = (text$: Observable<string>) =>
@@ -30,6 +37,12 @@ export class HomeComponent {
   formatter = (x: { strLeague: string }
   ) => x.strLeague;
 
-
+  showItem(checkLogged:boolean){
+    this.isValid=checkLogged;
+    if(this.isValid){
+     this.hideLogin=true;
+    }
+    console.log("resultat",this.isValid);
+  }
 
 }

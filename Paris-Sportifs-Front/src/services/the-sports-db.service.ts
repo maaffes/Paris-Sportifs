@@ -26,7 +26,7 @@ export class TheSportsDbService {
  * @returns 
  */
   getDetailTeam(idTeam: any): Observable<any> {
-    return this.http.get(`https://www.thesportsdb.com/api/v1/json/2/lookupteam.php?id=${idTeam}`);
+    return this.http.get(`https://www.thesportsdb.com/api/v1/json/2/lookupequipment.php?id=${idTeam}`);
   }
 
   /**

@@ -1,0 +1,30 @@
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+
+  <div id="formContent">
+
+    <div>
+        <label>
+          {{ 'HOME.SELECT' | translate }}
+          <select #langSelect (change)="translate.use(langSelect.value)">
+            <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+          </select>
+        </label>
+    </div>
+    <!-- Login Form -->
+        
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <input type="text" id="login" class="fadeIn " name="login" placeholder="  {{ 'HOME.LOGIN' | translate }}" ngModel required #first="ngModel">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="  {{ 'HOME.PASSWORD' | translate }}" ngModel>
+      <input type="submit" class="fadeIn fourth" value="  {{ 'HOME.CONNECT' | translate }}">
+    </form>
+    
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">{{ 'HOME.FORGOT' | translate }}</a>
+    </div>
+
+  </div>
+</div>
